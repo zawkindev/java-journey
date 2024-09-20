@@ -1,6 +1,8 @@
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.HashMap;
+import java.util.HashSet;
+import java.util.Map;
 
 public class Main {
   enum Options {
@@ -47,6 +49,11 @@ public class Main {
 
     for (String item : dictionary.values())
       System.out.println(item);
+
+    HashSet<Integer> idSet = new HashSet<>();
+    idSet.add(3);
+    idSet.add(22);
+    idSet.remove(3);
 
   }
 }

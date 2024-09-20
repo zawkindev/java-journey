@@ -5,7 +5,7 @@ import java.util.HashSet;
 import java.util.Iterator;
 import java.util.Map;
 
-public class Main {
+public class Main implements Runnable{
   enum Options {
     A,
     B,
@@ -19,7 +19,17 @@ public class Main {
     return Options.A;
   }
 
+  public void run() {
+    for (int i = 0; i < 5; i++) {
+      System.out.println("This code is running in a thread");
+    }
+  }
+
   public static void main(String[] args) {
+    Main mainObj = new Main();
+    Thread thread = new Thread(mainObj);
+    thread.start();
+
     String name = "Asuna";
     int age = 18;
     float height = 166.4f;

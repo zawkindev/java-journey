@@ -2,6 +2,7 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.HashMap;
 import java.util.HashSet;
+import java.util.Iterator;
 import java.util.Map;
 
 public class Main {
@@ -46,14 +47,22 @@ public class Main {
     for (String item : dictionary.keySet())
       System.out.println(item);
 
-
     for (String item : dictionary.values())
       System.out.println(item);
 
     HashSet<Integer> idSet = new HashSet<>();
     idSet.add(3);
     idSet.add(22);
-    idSet.remove(3);
+    idSet.add(04);
+    idSet.add(2006);
 
+    Iterator<Integer> it = idSet.iterator();
+
+    while (it.hasNext()) {
+      Integer num = it.next();
+      if (num == 3)
+        it.remove();
+    }
+    System.out.println(idSet);
   }
 }

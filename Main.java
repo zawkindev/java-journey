@@ -1,4 +1,6 @@
 import java.util.ArrayList;
+import java.util.Collections;
+import java.util.HashMap;
 
 public class Main {
   enum Options {
@@ -27,9 +29,24 @@ public class Main {
     System.out.println("Gender: " + gender);
     System.out.println("isWaifu: " + isWaifu);
 
-    ArrayList<Integer> numbers = { 1, 2, 3 };
+    ArrayList<Integer> numbers = new ArrayList<>();
     numbers.add(22);
-    numbers.remove(2);
-    numbers.set(1,3);
+    numbers.remove(0);
+
+    Collections.sort(numbers);
+
+    for (Integer num : numbers)
+      System.out.println(num);
+
+    HashMap<String, String> dictionary = new HashMap<String, String>();
+    dictionary.put("en", "uz");
+
+    for (String item : dictionary.keySet())
+      System.out.println(item);
+
+
+    for (String item : dictionary.values())
+      System.out.println(item);
+
   }
 }
